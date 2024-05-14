@@ -1,3 +1,4 @@
 #!/user/bin/pyhton
-def number_key(a_dectionary):
-    return len(a_dectionary)
+def number_key(a_dictionary):
+    return len(a_dictionary)
+
