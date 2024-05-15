@@ -1,5 +1,5 @@
-#!/user/bin/python3
-def safe__print_integer(valu):
+#!/usr/bin/python3
+def safe_print_integer(value):
     try:
         print("{:d}".format(value))
     except Exception:
