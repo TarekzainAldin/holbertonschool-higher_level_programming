@@ -1,4 +1,5 @@
-"Contains an class : 'Square'"""
+#!/usr/bin/python3
+"""Contains an class : 'Square'"""
 
 
 class Square:
