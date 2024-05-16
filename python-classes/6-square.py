@@ -1,23 +1,23 @@
 #!/usr/bin/python3
-"""Module contenant la classe Square."""
+"""Contains an class : 'Square"""
 
 
 class Square:
-    """Classe représentant un carré."""
+    """A class representing a square"""
 
     def __init__(self, size=0, position=(0, 0)):
-        """Initialise un carré avec une taille optionnelle."""
+        """Initialize the Square with a given size."""
         self.size = size
         self.position = position
 
     @property
     def size(self):
-        """Obtient la taille du carré."""
+        """Get the size of the square."""
         return self._size
 
     @size.setter
     def size(self, value):
-        """Définit la taille du carré avec des vérifications."""
+        """Set the size of the square."""
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         if value < 0:
@@ -26,12 +26,12 @@ class Square:
 
     @property
     def position(self):
-        """obtient la position du carre"""
+        """get the position """
         return self._position
 
     @position.setter
     def position(self, value):
-        """Définit la position du carré avec des vérifications."""
+        """set the value for var ins."""
         if (not isinstance(value, tuple) or len(value) != 2 or
                 not all(isinstance(num, int) for num in value) or
                 not all(num >= 0 for num in value)):
@@ -39,11 +39,11 @@ class Square:
         self._position = value
 
     def area(self):
-        """Calcule et retourne l'aire du carré."""
+        """Calcule and return ."""
         return (self._size ** 2)
 
     def my_print(self):
-        """imprimer la valeur de la taille"""
+        """print the val """
         if self._size == 0:
             print("")
             return
