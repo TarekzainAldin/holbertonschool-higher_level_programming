@@ -1,15 +1,14 @@
-#!/user/bin/python3
-"""Module for add_integer method-
-
->>> add_interger(5,10)
+#!/usr/bin/python3
+""" Return the addition of two integer
+>>> add_integer(5, 10)
 15
 >>> add_integer(2)
 100"""
 
 
 def add_integer(a, b=98):
-    """make the sum for tow integers
-        return error if a or b its not error
+    """Computes the sum of two integers
+        return error if a or b is not integer
     """
     if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
