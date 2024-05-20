@@ -1,12 +1,7 @@
-#!/user/bin/python3
-"""
- A module with a rectangle does nothing
-
-"""
+#!/usr/bin/python3
+"""Rectangle"""
 
 
 class Rectangle:
-    """
-    an empty Recangle
-    """
+    """Rectangle"""
     pass
