@@ -1,5 +1,5 @@
 #!/user/bin/python3
-"""return list"""
+"""lookup"""
 
 
 def lookup(obj):
