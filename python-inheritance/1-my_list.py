@@ -1,11 +1,12 @@
-#!/user/bin/python3
-"""Mylist"""
+#!/usr/bin/python3
+"""MyList"""
 
 
-class Mylist(list):
+class MyList(list):
+    """MyList"""
     def print_sorted(self):
-        tList = []
+        json = []
         for element in self.copy():
-            if type(element) is int :
-                tList.append(element)
-                print(sorted(tList))
+            if type(element) is int:
+                json.append(element)
+        print(sorted(json))
