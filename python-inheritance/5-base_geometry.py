@@ -1,8 +1,7 @@
-#!/user/bin/python3
-"""base geometry"""
+#!/usr/bin/python3
+"""BaseGeometry"""
 
 
-class BaseGeometry:
+class BaseGeometry():
     """BaseGeometry"""
-
     pass

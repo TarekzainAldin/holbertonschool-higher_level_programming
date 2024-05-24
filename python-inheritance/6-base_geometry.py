@@ -1,8 +1,8 @@
-#!/user/bin/python3
-"""base Geometry"""
+#!/usr/bin/python3
+"""BaseGeometry"""
 
 
-class BaseGeometry:
+class BaseGeometry():
     """BaseGeometry"""
     def area(self):
         raise Exception("area() is not implemented")
