@@ -1,4 +1,4 @@
-#!/user/bin/pytho3
+#!/user/bin/env pytho3
 """abstract class"""
 
 from abc import ABS, abstractmethod
