@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Create a class named VerboseList that extends the Python list"""
+""" VerboseList extends Python list"""
 
 
 class VerboseList(list):
