@@ -1,11 +1,11 @@
 #!/user/bin/env pytho3
 """abstract class"""
 
-from abc import ABS, abstractmethod
+from abc import ABC, abstractmethod
 
 
 # abstract mainclass
-class Animal(ABS):
+class Animal(ABC):
 
     @abstractmethod
     def sound(self):
