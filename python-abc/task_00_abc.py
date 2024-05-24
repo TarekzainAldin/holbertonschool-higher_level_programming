@@ -20,6 +20,6 @@ class Dog(Animal):
 
 
 # subclass inherts from the animal
-class cat(Animal):
+class Cat(Animal):
     def sound(self):
         return "Meow"
