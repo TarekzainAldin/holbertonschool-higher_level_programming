@@ -1,10 +1,7 @@
-#!/usr/bin/env python3
-
 from abc import ABC, abstractmethod
-import math
 
 
-#   Shape abs class
+# Define the Shape abstract class
 class Shape(ABC):
     @abstractmethod
     def area(self):
@@ -15,18 +12,19 @@ class Shape(ABC):
         pass
 
 
-# S Implement
+# Implement the Circle class
 class Circle(Shape):
     def __init__(self, radius):
         self.radius = radius
 
     def area(self):
-        return math.pi * self.radius ** 2
+        return 3.141592653589793 * self.radius ** 2
 
     def perimeter(self):
-        return 2 * math.pi * self.radius
+        return 2 * 3.141592653589793 * self.radius
 
 
+# Implement the Rectangle class
 class Rectangle(Shape):
     def __init__(self, width, height):
         self.width = width
@@ -39,20 +37,18 @@ class Rectangle(Shape):
         return 2 * (self.width + self.height)
 
 
-# shape info function
+# Define the shape_info function
 def shape_info(shape):
-    print("Area: {}".format(shape.area()))
-    print("Perimeter: {}".format(shape.perimeter()))
+    print(f"Area: {shape.area()}")
+    print(f"Perimeter: {shape.perimeter()}")
 
 
-# Test
-if __name__ == "__main__":
-    circle = Circle(5)
-    rectangle = Rectangle(4, 6)
+# Testing the shape_info function with Circle and Rectangle
+circle = Circle(5)
+rectangle = Rectangle(4, 7)
 
-    print("Circle info:")
-    shape_info(circle)
-    print()
+print("Circle Info:")
+shape_info(circle)
 
-    print("Rectangle info:")
-    shape_info(rectangle)
+print("\nRectangle Info:")
+shape_info(rectangle)
