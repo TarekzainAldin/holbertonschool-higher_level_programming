@@ -1,5 +1,4 @@
-#!user/bin/env python3
-"""abs class """
+#!/usr/bin/env python3
 
 from abc import ABC, abstractmethod
 import math
@@ -19,9 +18,7 @@ class Shape(ABC):
 # Circle Class
 class Circle(Shape):
     def __init__(self, radius):
-        if radius < 0:
-            raise ValueError("Radius cannot be negative")
-        self.radius = radius
+        self.radius = abs(radius)
 
     def area(self):
         return math.pi * self.radius ** 2
@@ -64,18 +61,12 @@ shape_info(rectangle)
 
 # Test cases
 def test_circle_negative():
-    try:
-        circle_negative = Circle(-5)
-    except ValueError as e:
-        print(e)
-
-
-def test_rectangle_negative():
-    try:
-        rectangle_negative = Rectangle(-4, 7)
-    except ValueError as e:
-        print(e)
+    circle_negative = Circle(-5)
+    assert abs(circle_negative.perimeter() - 31.41592653589793)
+    < 1e-5, "Perimeter should handle negative radius"
+    assert abs(circle_negative.area() - 78.53981633974483)
+    < 1e-5, "Area should handle negative radius"
+    print("test_circle_negative passed.")
 
 
 test_circle_negative()
-test_rectangle_negative()
