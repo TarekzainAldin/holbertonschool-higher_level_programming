@@ -2,10 +2,8 @@
 """abs class """
 
 from abc import ABC, abstractmethod
-import math
 
 
-# Shape Abstract Class
 class Shape(ABC):
     @abstractmethod
     def area(self):
@@ -16,19 +14,17 @@ class Shape(ABC):
         pass
 
 
-# Circle Class
 class Circle(Shape):
     def __init__(self, radius):
         self.radius = radius
 
     def area(self):
-        return math.pi * self.radius ** 2
+        return 3.14 * self.radius ** 2
 
     def perimeter(self):
-        return 2 * math.pi * self.radius
+        return 2 * 3.14 * self.radius
 
 
-# Rectangle Class
 class Rectangle(Shape):
     def __init__(self, width, height):
         self.width = width
@@ -41,18 +37,15 @@ class Rectangle(Shape):
         return 2 * (self.width + self.height)
 
 
-# shape_info Function
 def shape_info(shape):
     print(f"Area: {shape.area()}")
     print(f"Perimeter: {shape.perimeter()}")
 
 
-# Testing the shape_info function with Circle and Rectangle
+# Testing
 circle = Circle(5)
 rectangle = Rectangle(4, 7)
 
-print("Circle Info:")
-shape_info(circle)
 
-print("\nRectangle Info:")
+shape_info(circle)
 shape_info(rectangle)
