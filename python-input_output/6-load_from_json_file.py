@@ -1,12 +1,10 @@
 #!/usr/bin/python3
-"""Contains the Save Object to a file"""
-
+"""contais the Create object from a JSON file"""
 
 import json
 
 
-def save_to_json_file(my_obj, filename):
-    """ function that writes an Object to a text file,
-    using a JSON representation"""
-    with open(filename, "w") as file:
-        json.dump(my_obj, file)
+def load_from_json_file(filename):
+    """Creates an object from a JSON file."""
+    with open(filename, "r", encoding='utf-8') as f:
+        return json.load(f)
