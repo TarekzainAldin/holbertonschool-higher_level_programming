@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python3*
 """Module to load an object from a JSON file"""
 
 import json
