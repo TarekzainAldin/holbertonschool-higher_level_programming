@@ -1,0 +1,96 @@
+## Exercice d'apprentissage : Utiliser curl pour interagir avec des API
+
+##Objectif
+
+À la fin de cet exercice, vous devriez être capable de :
+
+- 1.Installer et utiliser curl à partir de la ligne de commande.
+- 2.Construire et exécuter des requêtes API basiques avec curl, y compris définir des en-têtes et inspecter la sortie.
+- 3.Interpréter les résultats des requêtes API courantes.
+
+##Ressources
+- 1.curl - Everything curl
+- 2.Utiliser cURL pour interagir avec des API HTTP
+- 3.JSONPlaceholder - Une API REST en ligne gratuite que vous pouvez utiliser pour tester et prototyper.
+
+##Instructions
+- 1. Installation et interaction basique avec curl
+
+# Installer curl
+- .Linux/Mac : curl est généralement préinstallé. Sinon, vous pouvez l'installer en utilisant votre gestionnaire de paquets :
+
+- .Debian/Ubuntu : sudo apt-get install curl
+- .Red Hat/CentOS : sudo yum install curl
+- .MacOS : brew install curl (en utilisant Homebrew)
+- .Windows : Utilisez Windows Subsystem for Linux (WSL) ou téléchargez une version Windows de curl depuis le site officiel.
+
+##Confirmer l'installation
+- .Exécutez la commande suivante pour confirmer que curl est installé :
+
+bash
+'''
+curl --version
+'''
+
+- Sortie attendue : Détails sur la version installée de curl, y compris les protocoles pris en charge.
+
+## 2.Récupération de données depuis une page web
+- Récupérer le contenu
+- Utilisez curl pour récupérer le contenu d'une page web :
+
+bash
+'''
+curl http://example.com
+'''
+
+- Sortie attendue : Le contenu HTML de la page web.
+
+## 3.Récupération de données depuis une API
+- Récupérer des posts depuis JSONPlaceholder
+- Utilisez curl pour récupérer des posts depuis JSONPlaceholder :
+
+bash
+'''
+curl https://jsonplaceholder.typicode.com/posts
+'''
+
+- Sortie attendue : Un tableau JSON de posts, chacun contenant des attributs comme userId, id, title et body.
+
+## 4. Utilisation des en-têtes et d'autres options avec curl
+- Récupérer uniquement les en-têtes
+- Récupérer uniquement les en-têtes de la même requête :
+
+
+bash
+'''
+curl -I https://jsonplaceholder.typicode.com/posts
+'''
+
+- Sortie attendue : Les en-têtes HTTP, y compris les codes de statut et autres métadonnées.
+- Faire une requête POST
+- Utilisez curl pour faire une requête POST à l'API :
+
+bash
+'''
+curl -X POST -d "title=foo&body=bar&userId=1" https://jsonplaceholder.typicode.com/posts
+'''
+
+- Sortie attendue : Un objet JSON représentant le post créé. Pour JSONPlaceholder, il retourne généralement le post créé avec un id de 101.
+
+## Conseils
+- Le flag -I récupère uniquement les en-têtes, ce qui est utile pour diagnostiquer les paramètres du serveur, les contrôles de cache, le type de contenu, etc.
+- Le flag -X spécifie la méthode HTTP pour votre requête. Par exemple, -X POST fait une requête POST.
+- Le flag -d permet de passer des données dans votre requête, couramment utilisé avec les requêtes POST, PUT ou PATCH.
+- Pour formater et mettre en évidence la sortie JSON, considérez de passer la sortie à un outil comme jq :
+
+bash
+'''
+curl https://jsonplaceholder.typicode.com/posts | jq
+'''
+
+## Résumé
+- En suivant ces étapes, vous serez capable de :
+
+- Installer et vérifier curl.
+- Récupérer et interpréter des données depuis une page web et une API.
+- Utiliser les options de curl pour adapter vos requêtes et visualiser les résultats de manière efficace.
