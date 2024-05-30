@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-
+"""the script for adding in the flask"""
 
 from flask import Flask, jsonify, request
 
 app = Flask(__name__)
-
+"""herer alsso decument"""
 users = {
     "jane": {"name": "Jane", "age": 28, "city": "Los Angeles"},
     "john": {"name": "John", "age": 30, "city": "New York"}
@@ -13,21 +13,25 @@ users = {
 
 @app.route('/')
 def home():
+    """the get of home"""
     return "Welcome to the Flask API!"
 
 
 @app.route('/data')
 def get_data():
+    """get the data in api"""
     return jsonify(list(users.keys()))
 
 
 @app.route('/status')
 def status():
+    """heere we are the stat for the users"""
     return "OK"
 
 
 @app.route('/users/<username>')
 def get_user(username):
+    """get user in the users"""
     user = users.get(username)
     if user:
         return jsonify(user)
@@ -37,6 +41,7 @@ def get_user(username):
 
 @app.route('/add_user', methods=['POST'])
 def add_user():
+    """adding user in the list of users by curl"""
     user_data = request.json
     username = user_data.get('username')
     if username and username not in users:
@@ -51,4 +56,5 @@ def add_user():
 
 
 if __name__ == '__main__':
+    """when he is execute in directly"""
     app.run(debug=True)
