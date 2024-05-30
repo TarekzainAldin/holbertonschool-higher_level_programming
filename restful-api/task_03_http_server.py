@@ -9,6 +9,7 @@ import json
 class SimpleHandler(BaseHTTPRequestHandler):
     """contains the class"""
     def do_GET(self):
+        """contains the class"""
         if self.path == '/':
             self.send_response(200)
             self.send_header('Content-type', 'text/plain')
