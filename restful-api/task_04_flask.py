@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""contains the class"""
+
 
 from flask import Flask, jsonify, request
 
