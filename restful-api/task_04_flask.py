@@ -13,25 +13,21 @@ users = {
 
 @app.route('/')
 def home():
-    """contains the class"""
     return "Welcome to the Flask API!"
 
 
 @app.route('/data')
 def get_data():
-    """contains the class"""
     return jsonify(list(users.keys()))
 
 
 @app.route('/status')
 def status():
-    """contains the class"""
     return "OK"
 
 
 @app.route('/users/<username>')
 def get_user(username):
-    """contains the class"""
     user = users.get(username)
     if user:
         return jsonify(user)
@@ -41,7 +37,6 @@ def get_user(username):
 
 @app.route('/add_user', methods=['POST'])
 def add_user():
-    """contains the class"""
     user_data = request.json
     username = user_data.get('username')
     if username and username not in users:
@@ -56,5 +51,4 @@ def add_user():
 
 
 if __name__ == '__main__':
-    """contains the class"""
     app.run(debug=True)
