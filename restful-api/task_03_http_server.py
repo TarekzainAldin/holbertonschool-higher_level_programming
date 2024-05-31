@@ -7,9 +7,9 @@ import json
 
 
 class SimpleHandler(BaseHTTPRequestHandler):
-    """contains the class"""
+    """def GET"""
     def do_GET(self):
-        """contains the class"""
+        """code get"""
         if self.path == '/':
             self.send_response(200)
             self.send_header('Content-type', 'text/plain')
@@ -53,7 +53,7 @@ class SimpleHandler(BaseHTTPRequestHandler):
 
 
 def run(server_class=HTTPServer, handler_class=SimpleHandler, port=8000):
-    """contains of the server"""
+    """code def run"""
     server_address = ('', port)
     httpd = server_class(server_address, handler_class)
     print(f"Starting HTTP server on port {port}")
