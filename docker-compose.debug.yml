@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  holbertonschoolhigherlevelprogramming8:
+    image: holbertonschoolhigherlevelprogramming8
+    build:
+      context: .
+      dockerfile: ./Dockerfile
