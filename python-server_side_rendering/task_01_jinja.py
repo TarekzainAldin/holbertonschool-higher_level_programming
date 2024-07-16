@@ -2,10 +2,10 @@
 """Basic flask application that renders a HTML template"""
 from flask import Flask, render_template
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='/home/tarek/holbertonschool-higher_level_programming-12/python-server_side_rendering/templates ')
 
 @app.route('/')
-def home():
+def index():
     return render_template('index.html')
 
 @app.route('/about')
@@ -17,4 +17,4 @@ def contact():
     return render_template('contact.html')
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    app.run(debug=True)
