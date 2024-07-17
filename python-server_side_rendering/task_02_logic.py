@@ -3,7 +3,7 @@
 from flask import Flask, render_template
 import json
 
-app = Flask(__name__, template_folder="/home/tarek/holbertonschool-higher_level_programming-12/python-server_side_rendering/templates ")
+app = Flask(__name__)
 
 @app.route('/')
 def home():
@@ -20,7 +20,7 @@ def contact():
 @app.route('/items')
 def items():
     # Read and and load items from json file to python dict
-    with open('/home/tarek/holbertonschool-higher_level_programming-12/python-server_side_rendering/items.json') as f:
+    with open('items.json') as f:
         data = json.load(f)
     # retrieve values of "items" key
     # assign empty list if 'items' not present

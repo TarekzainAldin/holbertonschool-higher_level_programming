@@ -6,7 +6,7 @@ import json
 import csv
 import sqlite3
 
-app = Flask(__name__, template_folder="/home/tarek/holbertonschool-higher_level_programming-12/python-server_side_rendering/templates ")
+app = Flask(__name__)
 
 @app.route('/')
 def home():
@@ -16,7 +16,7 @@ def home():
 def items():
     items_list = []
 
-    with open("/home/tarek/holbertonschool-higher_level_programming-12/python-server_side_rendering/items.json", 'r') as f:
+    with open("items.json", 'r') as f:
         rows = json.load(f)
     for key,value in rows.items():
         items_list = value
@@ -30,11 +30,11 @@ def products():
 
     data = []
     if source == "json":
-            data = load_json_data("/home/tarek/holbertonschool-higher_level_programming-12/python-server_side_rendering/products.json", id)
+        data = load_json_data("products.json", id)
     elif source == "csv":
-        data = load_csv_data("/home/tarek/holbertonschool-higher_level_programming-12/python-server_side_rendering/products.csv", id)
+        data = load_csv_data("products.csv", id)
     elif source == "sql":
-        sql_filepath = "/home/tarek/holbertonschool-higher_level_programming-12/python-server_side_rendering/products.db"
+        sql_filepath = "products.db"
         # create sqlite file if it doesn't exist yet
         if not Path(sql_filepath).is_file():
             create_sql_data(sql_filepath)
